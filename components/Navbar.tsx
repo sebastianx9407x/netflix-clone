@@ -49,7 +49,7 @@ const Navbar = () => {
                     duration-500
                     bg-zinc-900
                     bg-opacity-90
-                    ${showBackground ? 'bg-zinc-900 bg-opacity-90' : ""}
+                    ${showBackground ? 'bg-zinc-900 bg-opacity-90' : ""} 2
                 `}
     
                     
