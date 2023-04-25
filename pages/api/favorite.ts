@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { without } from "lodash";
 
-import prismadb from '@/lib/prismadb';
-import serverAuth from "@/lib/serverAuth";
+import prismadb from '@/libs/prismadb';
+import serverAuth from "@/libs/serverAuth";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    if (req.method === "POST") {
+    if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res);
 
       const { movieId } = req.body;
@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json(user);
     }
 
-    if (req.method === "DELETE") {
+    if (req.method === 'DELETE') {
       const { currentUser } = await serverAuth(req, res);
 
       const { movieId } = req.body;
